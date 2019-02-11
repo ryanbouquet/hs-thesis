@@ -95,6 +95,13 @@ view: games {
     type: count
     drill_fields: [id]
   }
+
+  measure: average_duration {
+    type: average
+    sql: ${TABLE}.duration/60 ;;
+    drill_fields: [id, duration]
+    value_format_name: decimal_1
+  }
 }
 
 view: games__card_history {
