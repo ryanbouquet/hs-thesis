@@ -21,6 +21,13 @@ view: games {
     sql: ${TABLE}.added ;;
   }
 
+  dimension: time_range {
+    type: tier
+    tiers: [0,6,12,18]
+    style: integer
+    sql: EXTRACT(hour from ${TABLE}.added) ;;
+  }
+
   dimension: card_history {
     hidden: yes
     sql: ${TABLE}.card_history ;;
