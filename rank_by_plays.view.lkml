@@ -13,6 +13,7 @@ view: rank_by_plays {
           WHERE ((cards.name IS NOT NULL))
           GROUP BY 1,2
           ORDER BY 3 DESC) ;;
+    persist_for: "24 hours"
   }
 
   dimension: rank {
