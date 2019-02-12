@@ -22,6 +22,7 @@ view: rank_by_plays {
   }
 
   dimension: name {
+    hidden: yes
     type: number
     primary_key: yes
     sql: ${TABLE}.cards_name ;;

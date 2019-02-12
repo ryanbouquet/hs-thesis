@@ -109,6 +109,19 @@ view: games {
     drill_fields: [id, duration]
     value_format_name: decimal_1
   }
+
+  parameter: class_select {
+    description: "Used for visualization formating and class comparisons"
+    type: string
+    suggest_dimension: hero
+  }
+
+  dimension: selected_class_flag {
+    description: "Used for visualization formating and class comparisons"
+    type: number
+    sql: (case when {% parameter class_select %} = ${hero} then 1
+      else 0 end);;
+  }
 }
 
 view: games__card_history {
