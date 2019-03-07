@@ -117,6 +117,19 @@ view: cards {
   dimension: player_class {
     type: string
     sql: ${TABLE}.playerClass ;;
+    link: {
+      label: "To Dashboard"
+      url: "/dashboards/5?Class={{ value }}"
+    }
+  }
+
+  dimension: link_back {
+    type: string
+    sql: "To Cards" ;;
+    link: {
+      label: "To Dashboard"
+      url: "/dashboards/4?Card%20Name=Leeroy%20Jenkins&Min%20Games=>20"
+    }
   }
 
   dimension: race {
