@@ -16,6 +16,10 @@ explore: cards {
     sql: LEFT JOIN UNNEST(${cards.mechanics}) as cards__mechanics ;;
     relationship: one_to_many
   }
+  join: complexity{
+    sql_on: ${cards.card_id} = ${complexity.id} ;;
+    relationship:  one_to_one
+  }
 }
 
 explore: games {
@@ -60,5 +64,9 @@ explore: all_cards_and_games {
     view_label: "Ranks"
     sql_on: ${cards.name} = ${rank_by_plays.name} ;;
     relationship: one_to_one
+  }
+  join: complexity{
+    sql_on: ${cards.card_id} = ${complexity.id} ;;
+    relationship:  one_to_one
   }
 }
