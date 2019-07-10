@@ -17,7 +17,7 @@ explore: cards {
     relationship: one_to_many
   }
   join: complexity{
-    sql_on: ${cards.card_id} = ${complexity.id} ;;
+    sql_on: ${cards.card_id} = ${complexity.id};;
     relationship:  one_to_one
   }
 }
