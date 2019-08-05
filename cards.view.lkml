@@ -7,6 +7,18 @@ view: cards {
     sql: ${TABLE}.cardId ;;
   }
 
+  parameter: aggregation {
+    type: string
+    allowed_value: { value: "Hour" }
+    allowed_value: { value: "Day" }
+    allowed_value: { value: "Day of Week"}
+    allowed_value: { value: "Week" }
+    allowed_value: { value: "Month" }
+    allowed_value: { value: "Quarter" }
+    allowed_value: { value: "Year" }
+    default_value: "Day"
+  }
+
   dimension: armor {
     type: number
     sql: ${TABLE}.armor ;;

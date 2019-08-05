@@ -44,7 +44,7 @@ view: complexity {
             ORDER BY 1 ) as expanded
         GROUP BY 1
         ORDER BY 1 ;;
-     persist_for: "24 hours"
+     #persist_for: "24 hours"
     }
 
     dimension: id {
