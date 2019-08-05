@@ -10,6 +10,10 @@ datagroup: personal_thesis_default_datagroup {
 
 persist_with: personal_thesis_default_datagroup
 
+named_value_format: usd_in_millions_test {
+  value_format: "$0.000,,\" M\""
+}
+
 explore: cards {
   join: cards__mechanics {
     view_label: "Cards: Mechanics"

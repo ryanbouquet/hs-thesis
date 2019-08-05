@@ -22,6 +22,17 @@ view: cards {
     sql: ${TABLE}.attack ;;
   }
 
+  dimension: test {
+    type: number
+    sql: 1 ;;
+      html:
+      {% if cards.attack._value == 2 %}
+      4
+      {% else %}
+      3
+      {% endif %} ;;
+  }
+
   dimension: card_set {
     type: string
     sql: ${TABLE}.cardSet ;;
