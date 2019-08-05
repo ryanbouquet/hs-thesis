@@ -10,6 +10,10 @@ datagroup: personal_thesis_default_datagroup {
 
 persist_with: personal_thesis_default_datagroup
 
+named_value_format: usd_in_millions_test {
+  value_format: "$0.000,,\" M\""
+}
+
 explore: cards {
   join: cards__mechanics {
     view_label: "Cards: Mechanics"
@@ -17,7 +21,7 @@ explore: cards {
     relationship: one_to_many
   }
   join: complexity{
-    sql_on: ${cards.card_id} = ${complexity.id} ;;
+    sql_on: ${cards.card_id} = ${complexity.id};;
     relationship:  one_to_one
   }
 }
