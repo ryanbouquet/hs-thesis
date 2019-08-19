@@ -1,4 +1,4 @@
-connection: "ryan_bq"
+connection: "personal_bigquery"
 
 # include all the views
 include: "*.view"
@@ -74,3 +74,6 @@ explore: all_cards_and_games {
     relationship:  one_to_one
   }
 }
+
+explore: dt_test {}
+explore: dt_test_2 {}

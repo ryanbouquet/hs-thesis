@@ -19,6 +19,31 @@ view: cards {
     default_value: "Day"
   }
 
+  parameter: test_param {
+    type: string
+    default_value: "test_value"
+  }
+
+
+  dimension: test {
+    type:  string
+    sql: {% if test_param._parameter_value == "'test_value'" %}
+    "test success"
+    {% else %}
+    "failure"
+    {% endif %};;
+  }
+
+  dimension: og {
+    type:  number
+    sql: 1 ;;
+    html: 2 ;;
+  }
+
+  dimension: copied {
+    type:  number
+    sql: ${og} ;;
+  }
   dimension: armor {
     type: number
     sql: ${TABLE}.armor ;;
@@ -34,16 +59,7 @@ view: cards {
     sql: ${TABLE}.attack ;;
   }
 
-  dimension: test {
-    type: number
-    sql: 1 ;;
-      html:
-      {% if cards.attack._value == 2 %}
-      4
-      {% else %}
-      3
-      {% endif %} ;;
-  }
+
 
   dimension: card_set {
     type: string
