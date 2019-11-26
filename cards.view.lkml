@@ -7,6 +7,9 @@ view: cards {
     sql: ${TABLE}.cardId ;;
   }
 
+  dimension: test_change {
+    sql: "testing!!" ;;
+  }
   parameter: aggregation {
     type: string
     allowed_value: { value: "Hour" }
