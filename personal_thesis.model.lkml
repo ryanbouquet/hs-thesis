@@ -1,4 +1,4 @@
-connection: "personal_bigquery"
+connection: "ryan_bq"
 
 # include all the views
 include: "*.view"
